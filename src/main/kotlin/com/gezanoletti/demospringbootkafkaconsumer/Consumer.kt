@@ -15,7 +15,7 @@ class Consumer {
     fun listen(record: ConsumerRecord<String, String>, acknowledgment: Acknowledgment) {
         try {
             logger.info("Record: key ${record.key()}, value ${record.value()}, partition ${record.partition()}, offset ${record.offset()}")
-           // acknowledgment.acknowledge()
+            acknowledgment.acknowledge()
 
         } catch (e: Exception) {
             logger.error(e.message, e)
